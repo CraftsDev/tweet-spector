@@ -7,20 +7,20 @@ import { HashTag } from '../../services/api/Twitter/TwitterResponseObjects';
 
 export default {
   title: 'Chip',
-  component: Chip,
+  component: Chip
 } as Meta;
 
 const Template: Story<ChipProps> = (args) => <Chip {...args} />;
 
 export const chip = Template.bind({});
 chip.args = {
-  hashTag: { text: '#Test Chip', indices: [2] } as HashTag,
+  hashTag: { text: '#Test Chip', indices: [2] } as HashTag
 };
 
 export const chipWithIcon = Template.bind({});
 chipWithIcon.args = {
   hashTag: { text: '#Python', indices: [2] } as HashTag,
-  ChipIcon: faGraduationCap,
+  ChipIcon: faGraduationCap
 };
 
 const ChipContainerTemplate: Story<PropsWithChildren<{}>> = (args) => (

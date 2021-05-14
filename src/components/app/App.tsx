@@ -37,9 +37,8 @@ const App = () => {
             style={{
               width: '1024px',
               maxWidth: '100%',
-              minWidth: getSize('1024px', isMobile),
-            }}
-          >
+              minWidth: getSize('1024px', isMobile)
+            }}>
             <Typography TagType={'h2'}>Tweet Feed</Typography>
           </Box>
           <SearchTweets isMobile={isMobile} />

@@ -26,10 +26,8 @@ const StyledAnchor = styled.a`
 
 const TweetList = (props: TweetListProps) => {
   const { tweets, loadMoreHandler } = props;
-  const {
-    evenBackgroundColor,
-    oddBackgroundColor,
-  } = variables.ThemeColors.tweetListItem;
+  const { evenBackgroundColor, oddBackgroundColor } =
+    variables.ThemeColors.tweetListItem;
 
   const appState = useContext(AppStoreStateContext);
   const dispatch = useContext(AppStoreDispatchContext);
@@ -39,7 +37,7 @@ const TweetList = (props: TweetListProps) => {
       q: appState.q,
       result_type: 'popular',
       count: 5,
-      max_id: appState.maxId,
+      max_id: appState.maxId
     };
     if (appState.q !== '')
       TWITTER_API_METHODS.getTweets(queryRequestParams).then(
@@ -47,7 +45,7 @@ const TweetList = (props: TweetListProps) => {
           // TODO implment loading
           const {
             statuses,
-            search_metadata: { next_results },
+            search_metadata: { next_results }
           } = response.data;
 
           const hashTagsToAdd = response.data.statuses
@@ -60,13 +58,13 @@ const TweetList = (props: TweetListProps) => {
               payload: {
                 statuses,
                 nextResults: next_results,
-                hashTags: hashTagsToAdd,
-              },
+                hashTags: hashTagsToAdd
+              }
             });
           } else {
             dispatch({
               type: TweetAppActionTypes.EndOfTweetList,
-              payload: {},
+              payload: {}
             });
           }
         },

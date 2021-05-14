@@ -13,11 +13,11 @@ const Typography: FunctionComponent<PropsWithChildren<TypographyProps>> = ({
   color,
   TagType,
   children,
-  style,
+  style
 }) => {
   const DefaultTag = 'h1';
   const paramStyles: { fontSize?: number; color?: string } = {
-    fontSize,
+    fontSize
   };
 
   if (color) paramStyles.color = color;

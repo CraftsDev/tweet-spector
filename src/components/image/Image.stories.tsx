@@ -3,7 +3,7 @@ import Image, { ImageProps } from '.';
 
 export default {
   title: 'Image',
-  component: Image,
+  component: Image
 } as Meta;
 
 const Template: Story<ImageProps> = (args) => (
@@ -12,12 +12,12 @@ const Template: Story<ImageProps> = (args) => (
 
 export const image = Template.bind({});
 image.args = {
-  isCircular: false,
+  isCircular: false
 };
 
 export const imageCircular = Template.bind({});
 imageCircular.args = {
-  isCircular: true,
+  isCircular: true
 };
 
 const Template2: Story<ImageProps> = (args) => (
@@ -32,5 +32,5 @@ const Template2: Story<ImageProps> = (args) => (
 
 export const imageCircular100 = Template2.bind({});
 imageCircular100.args = {
-  isCircular: true,
+  isCircular: true
 };

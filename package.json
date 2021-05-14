@@ -34,7 +34,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'",
-    "proxy": "lcp --proxyUrl https://api.twitter.com --port 8010"
+    "proxy": "lcp --proxyUrl https://api.twitter.com --port 8010",
+    "prettier": "npx prettier --write ."
   },
   "eslintConfig": {
     "extends": [
@@ -72,6 +73,7 @@
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.2.9",
-    "eslint": "^7.25.0"
+    "eslint": "^7.25.0",
+    "prettier": "2.3.0"
   }
 }

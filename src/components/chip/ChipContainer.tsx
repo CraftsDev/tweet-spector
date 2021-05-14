@@ -30,7 +30,7 @@ const StyleDiv = styled.div`
 `;
 
 const ChipContainer: FunctionComponent<PropsWithChildren<{}>> = ({
-  children,
+  children
 }) => <StyleDiv>{children}</StyleDiv>;
 
 export default ChipContainer;

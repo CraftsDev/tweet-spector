@@ -9,7 +9,7 @@ import { HashTag } from '../../services/api/Twitter/TwitterResponseObjects';
 
 export default {
   title: 'Box',
-  component: Box,
+  component: Box
 } as Meta;
 
 const Template: Story<PropsWithChildren<BoxProps>> = (args) => (
@@ -38,5 +38,5 @@ boxOverrides.args = {
   backgroundColor: variables.ThemeColors.tweetListItem.oddBackgroundColor,
   boxRadius: '0',
   shadow: false,
-  padding: '0',
+  padding: '0'
 };

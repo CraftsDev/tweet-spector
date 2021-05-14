@@ -10,7 +10,7 @@ export const initialState = {
   nextResults: '',
   maxId: '',
   end: false,
-  hashTagFilters: [] as HashTag[],
+  hashTagFilters: [] as HashTag[]
 };
 
 export type QueryStringState = typeof initialState;
@@ -20,7 +20,7 @@ export enum TweetAppActionTypes {
   UpdateTweets = 'UPDATE_TWEETS',
   LoadMoreTweets = 'LOAD_MORE_TWEETS',
   EndOfTweetList = 'END_OF_TWEET_LIST',
-  ToggleHashTagFilter = 'TOGGLE_HASH_TAG_FILTER',
+  ToggleHashTagFilter = 'TOGGLE_HASH_TAG_FILTER'
 }
 
 export type UpdateQueryStringPayload = {

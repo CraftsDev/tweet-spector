@@ -36,7 +36,7 @@ const Chip: FunctionComponent<ChipProps> = ({
   ChipIcon,
   contentColor,
   selectedBackgroundColor,
-  bgColor,
+  bgColor
 }) => {
   const tc = contentColor || variables.ThemeColors.chip.textDefault;
   const sbgc = selectedBackgroundColor || COLORS.INPUT_FOCUS_BLUE;
@@ -55,8 +55,8 @@ const Chip: FunctionComponent<ChipProps> = ({
     dispatch({
       type: TweetAppActionTypes.ToggleHashTagFilter,
       payload: {
-        hashTag,
-      },
+        hashTag
+      }
     });
   };
 
@@ -64,24 +64,22 @@ const Chip: FunctionComponent<ChipProps> = ({
     <StyledChip
       onClick={onClickHandler}
       style={{
-        backgroundColor: selectedChipBGColor,
-      }}
-    >
+        backgroundColor: selectedChipBGColor
+      }}>
       {ChipIcon && (
         <StyledIcon>
           <FontAwesomeIcon
             icon={ChipIcon}
             style={{
-              color: tc,
+              color: tc
             }}
           />
         </StyledIcon>
       )}
       <span
         style={{
-          color: tc,
-        }}
-      >
+          color: tc
+        }}>
         {hashTag.text}
       </span>
     </StyledChip>

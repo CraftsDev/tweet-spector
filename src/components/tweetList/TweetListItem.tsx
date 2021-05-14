@@ -29,15 +29,17 @@ export interface TweetListItemProps {
   className?: string;
 }
 
-// profile_image_url_https <- we should check for secure protocol and request that if it's currently set.
 const TweetListItem: FunctionComponent<TweetListItemProps> = ({
   backgroundColor,
   borderRadius,
-  tweet,
+  tweet
 }) => {
-  // const { protocol } = window.location;
-  // const isHTTPS = protocol === 'https:';
+  const { protocol } = window.location;
+  const isSecure = protocol === 'https:';
 
+  const regexEndURL = /(http(s)?:\/\/t.co\/.*$)/;
+  const endURLMatch = tweet.text.match(regexEndURL);
+  const useText = tweet.text.replace(regexEndURL, '');
   return (
     <Box
       shadow={false}
@@ -45,36 +47,30 @@ const TweetListItem: FunctionComponent<TweetListItemProps> = ({
       padding={'1em'}
       backgroundColor={backgroundColor}
       className={'tweet-item'}
-      style={{ display: 'block' }}
-    >
+      style={{ display: 'block' }}>
       <LeftDiv>
         <Image
           margin='0 14px 0 0'
           src={`${
-            tweet?.user?.profile_image_url ||
-            process.env.REACT_APP_AUSTIN_IMAGE ||
-            ''
+            (isSecure
+              ? tweet?.user?.profile_image_url_https
+              : tweet?.user?.profile_image_url) || ''
           }`}
           isCircular
         />
       </LeftDiv>
       <RightDiv>
-        <Typography TagType='h5'>
-          @{tweet?.user?.screen_name || 'acrafts'}
-        </Typography>
+        <Typography TagType='h5'>@{tweet?.user?.screen_name || ''}</Typography>
         <Typography
           TagType='p'
           color={variables.ThemeColors.tweetListItem.fontColor}
-          style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}
-        >
-          {`${tweet?.text}   `}
-          <StyledAnchor
-            target='_BLANK'
-            href={`https://twitter.com/${tweet?.user?.screen_name}/status/${tweet?.id_str}`}
-          >
-            twitter.com/{tweet?.user?.screen_name}/status/
-            {tweet?.id_str}
-          </StyledAnchor>
+          style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+          {`${useText}   `}
+          {endURLMatch && (
+            <StyledAnchor target='_BLANK' href={endURLMatch[0]}>
+              {endURLMatch[0]}
+            </StyledAnchor>
+          )}
         </Typography>
         {tweet?.entities?.hashtags && (
           <ChipContainer>

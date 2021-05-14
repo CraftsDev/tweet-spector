@@ -8,8 +8,8 @@ const TwitterAPI = axios.create({
   baseURL: `http://localhost:8010/proxy`,
   timeout: 1000,
   headers: {
-    Authorization: `Bearer ${BEARER_TOKEN}`,
-  },
+    Authorization: `Bearer ${BEARER_TOKEN}`
+  }
 });
 
 const getTweets = async (requestParams: GetTweetParams) => {
@@ -18,7 +18,7 @@ const getTweets = async (requestParams: GetTweetParams) => {
     q,
     count,
     result_type,
-    include_entities: 1,
+    include_entities: 1
   };
 
   if (max_id) params.max_id = max_id;
@@ -30,7 +30,7 @@ const getTweets = async (requestParams: GetTweetParams) => {
 };
 
 const TWITTER_API_METHODS = {
-  getTweets,
+  getTweets
 };
 
 export default TWITTER_API_METHODS;

@@ -25,7 +25,7 @@ const Image: FunctionComponent<ImageProps> = ({
   margin,
   height = 38,
   width = 38,
-  alt = '',
+  alt = ''
 }) => (
   <StyledImage
     isCircular={isCircular}

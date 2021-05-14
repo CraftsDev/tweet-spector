@@ -7,7 +7,7 @@ import debounce from 'lodash.debounce';
 
 /* May need to scope this and move to separate reusable file. */
 const {
-  ThemeColors: { input, funcs },
+  ThemeColors: { input, funcs }
 } = variables;
 
 const StyledInput = styled.input`

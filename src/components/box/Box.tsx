@@ -44,7 +44,7 @@ const Box: FunctionComponent<PropsWithChildren<BoxProps>> = ({
   boxRadius,
   style,
   flexDirection,
-  flexGrow,
+  flexGrow
 }) => {
   return (
     <StyleDiv
@@ -55,8 +55,7 @@ const Box: FunctionComponent<PropsWithChildren<BoxProps>> = ({
       boxRadius={boxRadius}
       flexDirection={flexDirection}
       className={`${className || ''} box`}
-      style={style}
-    >
+      style={style}>
       {children}
     </StyleDiv>
   );

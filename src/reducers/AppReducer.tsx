@@ -5,7 +5,7 @@ import {
   QueryStringState,
   UpdateQueryStringPayload,
   UpdateTweetsPayload,
-  ToggleHashTagFilterPayload,
+  ToggleHashTagFilterPayload
 } from '.';
 import { Tweet } from '../services/api/Twitter';
 import { HashTag } from '../services/api/Twitter/TwitterResponseObjects';
@@ -26,7 +26,7 @@ const AppReducer = (state: QueryStringState, action: AppActions) => {
         hashTagFilters: [],
         hashTags: [],
         end: false,
-        maxId: '',
+        maxId: ''
       };
     case TweetAppActionTypes.UpdateTweets:
       const tweetPayload = payload as UpdateTweetsPayload;
@@ -38,13 +38,13 @@ const AppReducer = (state: QueryStringState, action: AppActions) => {
           state.statuses,
           tweetPayload.statuses
         ),
-        hashTags: avoidDupes<HashTag>(state.hashTags, tweetPayload.hashTags),
+        hashTags: avoidDupes<HashTag>(state.hashTags, tweetPayload.hashTags)
       };
     case TweetAppActionTypes.LoadMoreTweets:
       const loadMorePayload = payload as LoadMoreTweetsPayload;
       return {
         ...state,
-        maxId: loadMorePayload.maxId,
+        maxId: loadMorePayload.maxId
       };
     case TweetAppActionTypes.EndOfTweetList:
       return { ...state, end: true };

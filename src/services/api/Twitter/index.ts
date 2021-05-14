@@ -6,7 +6,7 @@ import {
   User,
   Tweet,
   Statuses,
-  GetTweetsResponse,
+  GetTweetsResponse
 } from './TwitterResponseObjects';
 
 export type {
@@ -16,7 +16,7 @@ export type {
   User,
   Tweet,
   Statuses,
-  GetTweetsResponse,
+  GetTweetsResponse
 };
 
 export { TwitterAPI };

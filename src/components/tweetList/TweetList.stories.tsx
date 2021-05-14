@@ -6,7 +6,7 @@ import TweetListItem, { TweetListItemProps } from './TweetListItem';
 
 export default {
   title: 'Tweet List',
-  component: TweetList,
+  component: TweetList
 } as Meta;
 
 /* List Story */
@@ -16,7 +16,7 @@ const TweetListTemplate: Story<TweetListProps> = (args) => (
 
 export const tweetList = TweetListTemplate.bind({});
 tweetList.args = {
-  tweets: getFakeTweets(),
+  tweets: getFakeTweets()
 };
 
 /* List Item Story */

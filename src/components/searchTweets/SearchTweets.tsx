@@ -30,7 +30,7 @@ const SearchTweets: FC<SearchTweetProps> = ({ isMobile }) => {
   const handleSearchChange = (searchString: string) => {
     dispatch({
       type: TweetAppActionTypes.Update,
-      payload: { q: searchString },
+      payload: { q: searchString }
     });
   };
 
@@ -40,7 +40,7 @@ const SearchTweets: FC<SearchTweetProps> = ({ isMobile }) => {
     if (maxId)
       dispatch({
         type: TweetAppActionTypes.LoadMoreTweets,
-        payload: { maxId },
+        payload: { maxId }
       });
   };
 
@@ -52,15 +52,13 @@ const SearchTweets: FC<SearchTweetProps> = ({ isMobile }) => {
       shadow={false}
       style={{
         width: getSize('1024px', isMobile),
-        maxWidth: '100%',
-      }}
-    >
+        maxWidth: '100%'
+      }}>
       <MarginDiv
         className='content-left'
         style={{
-          maxWidth: getSize('650px', isMobile),
-        }}
-      >
+          maxWidth: getSize('650px', isMobile)
+        }}>
         <Search
           placeholderText='Search by keyword'
           onChangeCallback={handleSearchChange}
