@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Tweet Spector (like tweet inspector...)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple single page application that asynchronously queries the v1.1 Twitter Search API and allows the user to populate 5 popular tweets. If you would like to see more than 5 tweets, have no worries, the application allows you to "Load More" tweets for that current keyword search. It also offers the ability to filter the queried tweets based on a list of hash tags collected from the results of the current keyword search.
+
+#### Note: Proxy must be running for application to work.
 
 ## Available Scripts
 
