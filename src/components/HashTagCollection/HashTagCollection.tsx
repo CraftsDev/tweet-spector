@@ -9,7 +9,7 @@ const HashTagCollection = () => {
   const { hashTags } = useContext(AppStoreStateContext);
   return (
     <Box style={{ width: 'auto' }} className={'hash-cloud'}>
-      <Typography TagType={'h4'} style={{ marginBottom: '1.75em' }}>
+      <Typography TagType={'h3'} style={{ marginBottom: '1.75em' }}>
         Filter by hashtag
       </Typography>
       <ChipContainer>
